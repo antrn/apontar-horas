@@ -1,0 +1,74 @@
+
+<!--Componente que permite a inclusão de novos cards com os apontamentos de horas, 
+  utilização da diretiva ngModel para  vincular elementos do formulário com as variáveis do seletor apontamentoHoras do arquivo TS 
+permitindo a modificação e visualização no resumo do apontamento que acessa as propriedades da classe apontamentoHoras-->
+<section class="container apontamento-horas ff-inter">
+    <header class="header">
+        <h2>Adicionar um novo <br> apontamento de horas:</h2>
+    </header>
+    <form>
+        <label for="tarefa">Tarefa</label>
+        <input
+          type="textarea"
+          class="input"
+          id="tarefa"
+          name="tarefa"
+          placeholder="Digite o nº da tarefa"
+          [(ngModel)]="apontamentoHoras.tarefa"
+        >
+        <label for="data">Data do lançamento</label>
+    <input
+      type="date"
+      id="data"
+      name="data"
+      [(ngModel)]="apontamentoHoras.data"    
+    >
+    <label for="horas">Horas</label>
+        <input
+          type="textarea"
+          class="input"
+          id="horas"
+          name="horas"
+          placeholder="Digite a quantidade de horas para execução da tarefa"
+          [(ngModel)]="apontamentoHoras.horas"
+        >
+    <label for="comentario">Comentário</label>
+        <input
+          type="textarea"
+          class="input"
+          id="comentario"
+          name="comentario"
+          placeholder="Descreva o realizou na tarefa"
+          [(ngModel)]="apontamentoHoras.comentario"
+        >
+        <label for="atividade">Atividade</label>
+            <select id="atividade">
+            <option value="acompanhamento">Acompanhamento</option>
+            <option value="codificação">Codificação</option>
+            <option value="reunião">Reunião</option>
+            <option value="treinamento">Treinamento</option>
+            </select>
+            
+    </form>
+    <div class="radio-modelo">
+        Resumo do apontamento:
+        <div class="modelo ff-roboto-mono">
+            <img src="../../../../assets/imagens/relogio-pequeno.png" alt="relogio">
+            <p class="conteudo">{{apontamentoHoras.tarefa}}</p>
+            <p class="conteudo">{{apontamentoHoras.data}}</p>
+            <p class="conteudo">{{apontamentoHoras.horas}}</p>
+            <p class="conteudo">{{apontamentoHoras.comentario}}</p>
+            <p class="conteudo">{{apontamentoHoras.atividade}}</p>
+
+        </div>
+    </div>
+    <!--área dos botões para salvar o apontamento ou para cancelar
+    adição do evento click para chamar o método criarApontamento que por enquanto só exibe um alerta na tela.
+    Também utilizando o routerLink no botão cancelar para redirecionar a página para a tela onde os apontamentos são listados e onde há um botão
+    para criar novos lançamentos que será direcionado para este componente.
+    -->
+    <div class="acoes">
+        <button (click)="criarApontamento()" class="botao">Salvar</button>
+        <button routerLink="/listar-apontamentos" (click)="cancelarApontamento()" class="botao">Cancelar</button>
+    </div>
+</section>

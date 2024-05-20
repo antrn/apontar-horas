@@ -1,0 +1,19 @@
+<!--Utilização da diretiva ngClass para mudar dinamicamente a classe css utilizada de acordo com o tamanho do
+campo de comentários do card -->
+<div class="conteudoCard modelo ff-roboto-mono "[ngClass]="tamanhoCard">
+    <img src="/assets/imagens/relogio-pequeno.png" alt="Relogio">
+    <p class="conteudoCard"><b>{{cardApontamento.tarefa}}</b></p>
+            <p class="conteudoCard">{{cardApontamento.data}}</p>
+            <p class="conteudoCard">{{cardApontamento.horas}}</p>
+            <p class="conteudoCard">{{cardApontamento.comentario}}</p>
+            <p class="conteudoCard">{{cardApontamento.atividade}}</p>
+
+    <div class="acoes">
+        <button class="botao-editar">
+            <img src="/assets/imagens/icone-editar.png" alt="Ícone de editar">
+        </button>
+        <button class="botao-excluir">
+            <img src="/assets/imagens/icone-excluir.png" alt="Ícone de excluir">
+        </button>
+    </div>
+</div>

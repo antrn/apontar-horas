@@ -1,0 +1,24 @@
+<!--componente que lista os cards com os lançamentos cadastrados-->
+
+<section class="container">
+    <header class="header d-flex">
+        <h2 class="ff-inter">Meus Apontamentos de Horas</h2>
+        <button routerLink="/inserir-apontamento" class="botao">Adicionar Novo Apontamento</button>
+    </header>
+    <!-- Utilização da diretiva ngIf para verificar se o array listaApontamentos possui algum elemento, se estiver vazio renderiza o aviso
+    que não há lançamentos-->
+    <div class = "mural" *ngIf="listaApontamentos.length > 0, else semApontamentos" >
+      <!--Utilização da diretiva ngFor onde a variável local apontamentos recebe o array listaApontamentos-->
+        <div *ngFor="let apontamentos of listaApontamentos ">
+          <!--O seletor do componente card-apontamento -->
+          <app-card-apontamento [cardApontamento]="apontamentos"></app-card-apontamento>  
+        </div>
+      </div>
+
+</section>
+<ng-template #semApontamentos>
+  <div class="ff-inter sem-apontamentos">
+    <p>Ainda não há lançamentos até o momento</p>
+  </div>
+
+</ng-template>

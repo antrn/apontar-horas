@@ -1,0 +1,56 @@
+.acoes {
+    display: flex;
+    justify-content: flex-end 
+  }
+  
+  .botao-excluir {
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  
+  .botao-editar {
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .conteudoCard{
+    background-color: #F8F9FE;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .conteudoCard .conteudo {
+    margin: 1rem auto;
+    word-wrap: break-word;
+  }
+  
+  .conteudoCard .comentario {
+    word-wrap: break-word;
+  }
+  
+  .modelo {
+    box-shadow: 8px 8px 0px #3a1580;
+  }
+  
+  .conteudoCard-grande {
+    width: 556px;
+  }
+  
+  .conteudoCard-pequeno {
+    width: 262px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .conteudoCard-grande {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 426px) {
+    .conteudoCard-pequeno {
+      width: 100%;
+    }
+  }
