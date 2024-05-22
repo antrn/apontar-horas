@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Apontamento } from '../card-apontamento/apontamento';
 
 @Component({
   selector: 'app-inserir-apontamento',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InserirApontamentoComponent implements OnInit {
 
-  apontamentoHoras = {
-    id:'1',
-    tarefa:'Aprendendo Angular',
+  apontamentoHoras:Apontamento = {
+    id:0,
+    tarefa:0,
     data:'2024-20-05',
     horas:'08:12',
     comentario:'teste',

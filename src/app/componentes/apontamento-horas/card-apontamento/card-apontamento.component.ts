@@ -1,4 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
+import { Apontamento } from './apontamento';
 
 @Component({
   selector: 'app-card-apontamento',
@@ -8,10 +9,10 @@ import { Component,Input, OnInit } from '@angular/core';
 export class CardApontamentoComponent implements OnInit {
 
 //utilização do decorator para permitir que o componente pai acesse os dados do componente filho.
-  @Input()cardApontamento = {
+  @Input()cardApontamento: Apontamento= {
 
-    id:'',
-    tarefa:'',
+    id:0,
+    tarefa:0,
     data:'',
     horas:'',
     comentario:'',
